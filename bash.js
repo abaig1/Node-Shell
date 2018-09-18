@@ -1,3 +1,6 @@
+let pwd = require('./pwd')
+let list = require('./ls')
+
 //output prompt
 process.stdout.write('prompt > ')
 
@@ -9,7 +12,9 @@ process.stdin.on('data', (data) => {
   process.stdout.write('\nprompt > ');
 
   if (cmd === 'pwd') {
-    process.stdout.write(`Current directory: ${process.cwd()}`)
+    pwd()
+  }
+  if (cmd === 'ls'){
+   list()
   }
 });
-
